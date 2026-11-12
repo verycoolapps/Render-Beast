@@ -5,7 +5,12 @@
 
 ---
 
-## ENGLISH
+<details open>
+<summary><strong>🇬🇧 Read in English</strong></summary>
+
+---
+
+## 🇬🇧 ENGLISH
 
 ### What Is RENDER BEAST?
 
@@ -300,7 +305,16 @@ RENDER-BEAST/
 
 ---
 
-## BAHASA INDONESIA
+</details>
+
+---
+
+<details open>
+<summary><strong>🇮🇩 Baca dalam Bahasa Indonesia</strong></summary>
+
+---
+
+## 🇮🇩 BAHASA INDONESIA
 
 ### Apa Itu RENDER BEAST?
 
@@ -504,6 +518,12 @@ Setiap deliverable utama dievaluasi dengan framework 100 poin:
 
 ---
 
-*RENDER BEAST — From Imagination to Extraordinary Visual Reality.*
+*RENDER BEAST — Dari Imajinasi Menuju Realitas Visual yang Luar Biasa.*
 
 *GitHub: https://github.com/verycoolapps/Render-Beast*
+
+</details>
+
+---
+
+*RENDER BEAST — From Imagination to Extraordinary Visual Reality.*
