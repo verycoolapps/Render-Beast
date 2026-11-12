@@ -1,0 +1,338 @@
+# RENDER BEAST — System Defaults Configuration
+# Version: 1.0.0
+# All settings here represent system defaults. User requests always override.
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# LANGUAGE & COMMUNICATION
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+language:
+  primary: "en"
+  output_tone: "confident, creative, intelligent, professional, energetic"
+  documentation_bilingual: true          # README always bilingual (en + id)
+  assume_missing_details: true           # Make creative assumptions vs. asking
+  label_assumptions: true                # Clearly mark all assumptions made
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# QUALITY SYSTEM
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+quality:
+  minimum_acceptable_score: 85
+  masterpiece_threshold: 95
+  world_class_threshold: 90
+  professional_threshold: 85
+  needs_refinement_threshold: 75
+  weak_threshold: 60
+  reject_threshold: 59
+  mandatory_improvement_plan_below: 85
+  auto_evaluate: true                    # Score every major deliverable
+  score_on_specification_only: true      # When no actual render available, score spec
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CREATIVE MODES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+creative_modes:
+  multi_direction_exploration: true      # Develop 3 directions for significant projects
+  originality_engine: true              # Always run originality analysis
+  anti_slop: true                       # Always run anti-slop detection
+  art_direction_first: true             # Establish art direction before generating
+
+  significance_thresholds:              # What counts as a "significant project"
+    complexity_indicators:
+      - "brand identity"
+      - "campaign"
+      - "product launch"
+      - "complete website"
+      - "feature film"
+      - "hero image"
+      - "key visual"
+    always_explore_directions: false    # Only for significant projects (saves time for simple requests)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# IMAGE BEAST DEFAULTS
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+image:
+  default_aspect_ratio: "16:9"
+  supported_aspect_ratios:
+    - "1:1"       # Square (Instagram, profile)
+    - "4:5"       # Portrait social
+    - "9:16"      # Stories, Reels, TikTok
+    - "16:9"      # Landscape, YouTube, presentation
+    - "3:2"       # Photography standard
+    - "2:3"       # Portrait photography
+    - "21:9"      # Cinematic ultra-wide
+    - "4:3"       # Traditional screen
+    - "A4"        # Print portrait
+    - "A3"        # Large print
+
+  default_quality: "ultra-high"
+  default_style: "photorealistic"
+
+  resolution_standards:
+    web_standard: "1920x1080"
+    web_hero: "2560x1440"
+    social_square: "1080x1080"
+    social_portrait: "1080x1350"
+    stories: "1080x1920"
+    print_standard: "3508x2480"       # A4 at 300dpi
+    billboard: "10000x4000"           # Dependent on actual size
+    mobile_app: "828x1792"            # iPhone standard
+
+  color_space: "sRGB"                  # Default; specify Display P3 for Apple platforms
+  dpi_web: 72
+  dpi_print: 300
+  dpi_billboard: 150
+
+  default_formats:
+    web: "webp"
+    social: "jpg"
+    print: "tiff"
+    transparency: "png"
+
+  prompt_structure_order:
+    - subject
+    - action_state
+    - environment
+    - composition
+    - lighting
+    - camera
+    - style
+    - quality_modifiers
+
+  negative_prompt_always_include:
+    - "blurry"
+    - "low quality"
+    - "deformed"
+    - "watermark"
+    - "text overlay"
+    - "stock photo composition"
+    - "generic AI aesthetic"
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CINEMA BEAST DEFAULTS
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+video:
+  default_aspect_ratio: "16:9"
+  supported_aspect_ratios:
+    - "16:9"      # Standard, YouTube, broadcast
+    - "9:16"      # Stories, TikTok, Reels
+    - "1:1"       # Square social
+    - "21:9"      # Cinematic ultra-wide
+    - "4:3"       # Traditional TV
+
+  default_fps: 24                        # Cinematic default
+  supported_fps:
+    cinematic: 24
+    standard: 30
+    smooth: 60
+    slow_motion: 120
+    ultra_slow: 240
+
+  default_resolution: "1080p"
+  supported_resolutions:
+    - "720p"      # 1280x720
+    - "1080p"     # 1920x1080
+    - "2K"        # 2048x1080
+    - "4K"        # 3840x2160
+    - "8K"        # 7680x4320
+
+  color_grading:
+    standard: "Rec.709"
+    hdr: "Rec.2020"
+    cinematic: "DCI-P3"
+
+  codec_defaults:
+    delivery: "H.264"
+    master: "ProRes 422"
+    archive: "ProRes 4444"
+    web: "H.265"
+    next_gen: "AV1"
+
+  timeline_engine:
+    minimum_scene_duration: 2           # seconds
+    maximum_scene_duration: 30          # seconds (for clip generators)
+    include_timestamps: true
+    include_continuity_notes: true
+    include_sound_design: true
+    include_music_direction: true
+
+  audio:
+    default_sample_rate: 48000
+    default_bit_depth: 24
+    default_channels: 2                 # Stereo
+    surround: 5.1
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# DIMENSION BEAST DEFAULTS
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+threed:
+  default_workflow: "PBR"              # Physically-Based Rendering
+
+  polygon_budgets:
+    mobile_game_hero: 10000
+    mobile_game_environment: 25000
+    desktop_game_hero: 50000
+    desktop_game_environment: 150000
+    real_time_visualization: 500000
+    film_vfx: 10000000
+    web_threejs_simple: 5000
+    web_threejs_complex: 50000
+
+  default_texture_resolution: 2048     # pixels (power of 2)
+  supported_texture_resolutions:
+    - 512
+    - 1024
+    - 2048
+    - 4096
+    - 8192
+
+  default_units: "meters"
+  supported_units:
+    - "meters"
+    - "centimeters"
+    - "millimeters"
+    - "inches"
+    - "feet"
+
+  file_formats:
+    universal: "GLTF/GLB"
+    desktop_game: "FBX"
+    apple_ar: "USDZ"
+    web: "GLB"
+    animation: "ABC"
+    print_3d: "STL"
+    legacy: "OBJ"
+
+  default_render_engine: "Cycles"
+  supported_render_engines:
+    - "Cycles"
+    - "EEVEE"
+    - "Arnold"
+    - "Redshift"
+    - "V-Ray"
+    - "Three.js WebGL"
+    - "React Three Fiber"
+
+  lod_levels:
+    lod0: 1.0                          # Full detail
+    lod1: 0.5                          # 50% at medium distance
+    lod2: 0.25                         # 25% at far distance
+    lod3: 0.1                          # 10% at very far / impostor
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# EXPERIENCE BEAST DEFAULTS
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+web:
+  default_framework: "react"
+  preferred_stack:
+    - "React"
+    - "Next.js"
+    - "TypeScript"
+    - "Tailwind CSS"
+    - "Framer Motion"
+
+  responsive_breakpoints:
+    mobile_xs: 320
+    mobile: 375
+    mobile_lg: 428
+    tablet: 768
+    tablet_lg: 1024
+    desktop: 1280
+    desktop_lg: 1440
+    desktop_xl: 1920
+    ultrawide: 2560
+
+  performance_budgets:
+    lcp_target: 2500                   # ms — Largest Contentful Paint
+    lcp_acceptable: 4000               # ms
+    fid_target: 100                    # ms — First Input Delay
+    cls_target: 0.1                    # Cumulative Layout Shift
+    tti_target: 3500                   # ms — Time to Interactive
+    bundle_size_initial: 150           # KB — gzipped JavaScript
+    total_page_weight: 1000            # KB
+
+  accessibility:
+    standard: "WCAG 2.1 AA"
+    min_contrast_normal_text: 4.5
+    min_contrast_large_text: 3.0
+    min_contrast_ui_components: 3.0
+    keyboard_navigation: true
+    screen_reader_compatible: true
+    reduced_motion_support: true
+
+  security:
+    https_required: true
+    csp_enabled: true
+    xss_prevention: true
+    csrf_protection: true
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ANTI-SLOP SYSTEM
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+anti_slop:
+  enabled: true
+  auto_detect: true
+  auto_remediate: true
+  severity_threshold_for_rejection: "severe"  # mild/moderate pass with note; severe/catastrophic reject
+  process_stages: 6
+
+  banned_patterns:
+    - "generic-purple-blue-gradient"
+    - "random-neon-accents"
+    - "excessive-glassmorphism"
+    - "unnecessary-floating-elements"
+    - "repetitive-card-layouts"
+    - "generic-ai-illustration-style"
+    - "stock-photo-composition"
+    - "excessive-glow-effects"
+    - "unnecessary-3d-decorations"
+    - "random-geometric-ornaments"
+    - "inconsistent-typography"
+    - "poor-visual-hierarchy"
+    - "incoherent-lighting"
+    - "inconsistent-visual-language"
+    - "fake-depth-meaningless-shadows"
+    - "unnecessary-animations"
+    - "overloaded-interfaces"
+    - "generic-marketing-language"
+    - "fake-testimonials"
+    - "placeholder-content-in-final-deliverables"
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# OUTPUT BEHAVIOR
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+output:
+  depth_matches_complexity: true       # Simple request → focused output; complex → full spec
+  always_include_rationale: true       # Explain creative decisions
+  always_include_quality_check: true   # Include quality gate with every output
+  format_code_blocks: true            # Format all code properly
+  include_implementation_notes: true   # Flag limitations and next steps
+
+  response_depth:
+    simple_image_prompt: "focused"     # Concise prompt + rationale
+    complex_campaign: "comprehensive"  # Full production spec
+    website_project: "complete"        # Creative direction + full code
+    quick_reference: "minimal"        # Just the core answer
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# SAFETY SETTINGS
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+safety:
+  content_moderation: true
+  avoid_harmful_imagery: true
+  avoid_deepfake_creation: true
+  copyright_awareness: true
+  consent_awareness: true
+  children_in_imagery: "safe-only"
+  real_person_representation: "public-figures-only-with-care"
+  age_appropriate_default: "general-audiences"
+  disclose_ai_generation: true
